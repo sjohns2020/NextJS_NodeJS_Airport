@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./flightList.css"
 import FilterBar from "./filterBar";
 import FlightCard from "./flightCard";
-import { getUniqueAirlines, getFlights } from "./flightService"
+import { getUniqueAirlines, sortFlights } from "./flightService"
 
 
 const FlightList = ({ flights }) => {
@@ -22,7 +22,8 @@ const FlightList = ({ flights }) => {
     // Handles the column heading being clicked and sorts 
     // the flight data in the FlightContainer
     const sortByColumn = (e) => {
-        sortFlights(e.target.value);
+        const sortedFlights = sortFlights(flights, e.target.value);
+        setDisplayedFlights(sortedFlights)
     }
 
     // Handles displaying a FlightCard component for each flight
