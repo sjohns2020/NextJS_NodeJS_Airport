@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./flightList.css"
 import FilterBar from "./filterBar";
+import FlightCard from "./flightCard";
 import { getUniqueAirlines, getFlights } from "./flightService"
 
 
@@ -9,7 +10,6 @@ const FlightList = ({ flights }) => {
 
     // const FlightList = ({ flights, getDepartures, getArrivals, getFlights, sortFlights, searchFlight, setSearchError, tab, setTab, uniqueAirlines }) => {
     // Handles state to conditionally render the expansion of the flight card
-    const [expand, setExpand] = useState("");
     const [uniqueAirlines, setUniqueAirlines] = useState([]);
     const [displayedFlights, setDisplayedFlights] = useState(flights)
     const [search, setSearch] = useState(null)
@@ -18,10 +18,6 @@ const FlightList = ({ flights }) => {
         const airports = getUniqueAirlines(flights)
         setUniqueAirlines(airports)
     }, [])
-
-
-
-
 
     // Handles the column heading being clicked and sorts 
     // the flight data in the FlightContainer
@@ -33,14 +29,10 @@ const FlightList = ({ flights }) => {
     let flightList = displayedFlights.map((flight) => {
         return (
             <div className="table-row-container" key={flight.flightNo}>
-                {/* <FlightCard flight={flight} expand={expand} setExpand={setExpand} /> */}
-                <h1>Flight Card</h1>
+                <FlightCard flight={flight} />
             </div>
         )
     })
-
-
-
 
     return (
         <main>

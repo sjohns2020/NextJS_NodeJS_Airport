@@ -1,0 +1,59 @@
+.table-row {
+    display: flex;
+    align-items: center;
+    height: 4em;
+    padding-top: 1em;
+    padding: 1em;
+    border-bottom: solid rgba(195, 195, 195, 0.483) 2px;
+  }
+  
+  .image {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+  
+  .time {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+  
+  .portOfCallA {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20em;
+    padding: 0;
+  }
+
+  .portOfCallA h5 {
+    font-weight: bold;
+  }
+  
+  .flightDetails {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flightDetails h3 {
+    width: 5em;
+  }
+  
+  .flightDetails p {
+    width: 15em;
+    margin-left: 1em;
+  }
+  
+  .status {
+    display: flex;
+    width: 15em;
+    align-items: center;
+  }
+  
+  .more-details {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+  
