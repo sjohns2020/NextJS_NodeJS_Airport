@@ -5,10 +5,12 @@ const Header = () => {
     return (
         <header>
             <Image alt="logo" src="/images/logo.jpeg" width="110" height="110" />
-            <Link href="/">Home</Link>
-            <Link href="/arrivals">Arrivals</Link>
-            <Link href="/departures">Departures</Link>
-            <Link href="/search">Search</Link>
+            <nav>
+                <Link href="/">Home</Link>
+                <Link href="/arrivals">Arrivals</Link>
+                <Link href="/departures">Departures</Link>
+                <Link href="/search">Search</Link>
+            </nav>
         </header>
 
 

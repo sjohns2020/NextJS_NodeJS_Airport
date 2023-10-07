@@ -8,9 +8,9 @@ body {
 
   background: linear-gradient(
     to top,
-    #ffa500 1%, 
-    transparent 5%,
-    darkblue 50%
+    #ffa500 , 
+    transparent ,
+    darkblue 
   );
 
   min-height: 100vh;
@@ -51,27 +51,23 @@ footer {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 header img {
   border-radius: 50%;
 }
 
-header a {
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+a {
   position: relative;
   text-decoration: none;
 }
 
-header a::before {
+a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -82,9 +78,9 @@ header a::before {
   transition: width 0.3s ease;
 }
 
-header a:hover::before {
+a:hover::before {
   width: 35%; 
-  box-shadow: 1px 1px 1px 1px;
+  box-shadow: white 1px 1px 1px 1px;
 } 
 
 
