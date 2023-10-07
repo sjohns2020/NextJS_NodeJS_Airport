@@ -1,0 +1,116 @@
+.button-sort {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    font-size: 1em; 
+    font-weight: bold;
+    margin: 0; 
+  }
+  
+  .button-sort:hover {
+    color: #87487e; /* Hover text color */
+  }
+  
+  .table-container {
+    margin-left: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .table {
+    font-size: 1.1em;
+    color: black;
+    background: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    border-top-left-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .table-row-container:nth-child(odd) {
+    background-color: #7e0b6f0d;
+  }
+  
+  .image {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+  
+  .time {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+  
+  .portOfCallA {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20em;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .status {
+    display: flex;
+    width: 15em;
+    align-items: center;
+  }
+  
+  .more-details {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+  
+  .table-column {
+    display: flex;
+    align-items: center;
+    height: 2em;
+    padding: 1em;
+    padding-top: 0.6em;
+    padding-bottom: 0.4em;
+    border-bottom: solid rgb(195, 195, 195) 4px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .table-column > div {
+    font-weight: bolder;
+  }
+  
+  .table-column > div > h5 {
+    font-weight: bolder;
+    padding: 0.5em;
+    padding-left: 0;
+    border-radius: 0.5em;
+    color: black;
+    background-color: white;
+    border-radius: 0.5em;
+    border-top-left-radius: 0;
+  }
+  
+  .table-column > div > h5:hover {
+    font-weight: bolder;
+    padding: 0.5em;
+    margin-left: -0.5em;
+    border-radius: 0.5em;
+    color: white;
+    background-color: #7e0b6e;
+    transition: 0.2s;
+    border-radius: 0.5em;
+    border-top-left-radius: 0;
+  }
+  
+  .table-search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
