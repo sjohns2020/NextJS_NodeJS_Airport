@@ -1,39 +1,52 @@
-.table-row-expanded-container {
+.table-container {
     font-size: large;
-    padding: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 4em;
+    display: grid;
+    place-items: center;
     margin-bottom: 0.5em;
-  }
-  
-  .table-row-expanded-table {
-    border-top: solid rgba(0, 0, 0, 0.283) 2px;
-    border-right: solid rgba(0, 0, 0, 0.283) 2px;
-    border-left: solid rgba(0, 0, 0, 0.283) 2px;
-  }
-  
-  .table-row-expanded-row {
-    display: flex;
+}
+
+.table {
+    border: solid rgba(255, 255, 255, 0.841) 4px;
+    border-bottom: none;
+    display: grid; 
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 15vw 25vw;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.283) 2px;
-  }
-  
-  .table-row-expanded-row-title {
-    width: 10vw;
-  }
-  
-  .table-row-expanded-row-title > p {
+    border-bottom: solid rgba(255, 255, 255, 0.841) 4px;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.airline {
+    display: flex;
+}
+
+.airline img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 8px;
+}
+
+.row > div {
+    padding: 0.5em;
+}
+
+.row div:first-child > p {
     margin: 0.5em;
     font-weight: bolder;
-  }
-  
-  .table-row-expanded-row-data {
-    border-left: solid rgba(0, 0, 0, 0.283) 2px;
-    width: 15vw;
-  }
-  
-  .table-row-expanded-row-data > p {
+}
+
+.row div:last-child {
+    border-left: solid rgba(255, 255, 255, 0.841) 4px;
+}
+
+.row div:last-child > p {
     margin: 0.5em;
-  }
-  
+}

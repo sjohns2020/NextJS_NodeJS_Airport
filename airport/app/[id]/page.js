@@ -1,96 +1,68 @@
-import { getAllFlightIds } from "../components/flightService";
-import { getFlight } from "../components/flightService";
+import { getAllFlightIds, getFlight } from "../components/flightService";
 import "./flight.css"
 
-// Rendering dynamic paths for all flights with a flight ID
-export async function getStaticPaths() {
-    const paths = await getAllFlightIds();
-    return {
-        paths,
-        fallback: false,
-    };
-}
-
 const Flight = async ({ params }) => {
-    console.log(params)
     const flight = await getFlight(params.id)
-
-    console.log(flight)
-
     const [hours, minutes] = flight.time.split(":").slice(0, 2);
     const formattedTime = `${hours}:${minutes}`;
 
     return (
         <main>
-            { flight.arrDep === "A" 
-            ? <h1 className="pageTitle">Flight details for the {formattedTime} <i>{flight.airline}</i> flight arriving from {flight.portOfCallA} airport.</h1>
-
-            : <h1 className="pageTitle">Flight details for the {formattedTime} {flight.airline} flight to {flight.portOfCallA} airport.</h1>
-
+            {flight.arrDep === "A"
+                ? <h1>Flight details for the {formattedTime} <bold>{flight.airline}</bold> flight arriving from {flight.portOfCallA} airport.</h1>
+                : <h1>Flight details for the {formattedTime} {flight.airline} flight to {flight.portOfCallA} airport.</h1>
             }
-            <div className="table-row-expanded-container">
-                <div className="table-row-expanded-table">
+            <div className="table-container">
+                <div className="table">
 
-                    <div className="table-row-expanded-row">
-                        <div className="table-row-expanded-row-title">
-                            <p>Airline</p>
-                        </div>
-                        <div className="table-row-expanded-row-data">
+                    <div className="row">
+                        <div><p>Airline</p></div>
+                        <div className="airline">
                             <p>{flight.airline}</p>
+                            <img src={flight.image} alt={flight.airline}></img>
                         </div>
                     </div>
 
-                    <div className="table-row-expanded-row">
-                        <div className="table-row-expanded-row-title">
-                            <p>Time</p>
-                        </div>
-                        <div className="table-row-expanded-row-data">
+                    <div className="row">
+                        <div><p>Time</p></div>
+                        <div>
                             {flight.arrDep === "A"
-                                ? <p  >Arriving at {formattedTime}</p>
-                                : <p >Departing at {formattedTime}</p>}
+                                ? <p>Arriving at {formattedTime}</p>
+                                : <p>Departing at {formattedTime}</p>
+                            }
                         </div>
                     </div>
 
-                    <div className="table-row-expanded-row">
-                        <div className="table-row-expanded-row-title">
-                            <p>Flight No</p>
-                        </div>
-                        <div className="table-row-expanded-row-data">
-                            <p>{flight.flightNo}</p>
-                        </div>
+                    <div className="row">
+                        <div><p>Flight No</p></div>
+                        <div><p>{flight.flightNo}</p></div>
                     </div>
 
-                    <div className="table-row-expanded-row">
-                        <div className="table-row-expanded-row-title">
+                    <div className="row">
+                        <div>
                             {flight.arrDep === "A"
-                                ? <p data-testid="get-arr" >From</p>
-                                : <p data-testid="get-dep" >To</p>}
+                                ? <p>From</p>
+                                : <p>To</p>
+                            }
                         </div>
-                        <div className="table-row-expanded-row-data">
-                            <p>{flight.portOfCallA}</p>
-                        </div>
+                        <div><p>{flight.portOfCallA}</p></div>
                     </div>
 
-                    <div className="table-row-expanded-row">
-                        <div className="table-row-expanded-row-title">
-                            <p>Status</p>
-                        </div>
-                        <div className="table-row-expanded-row-data">
-                            <p data-testid="check-status">{flight.status}</p>
-                        </div>
+                    <div className="row">
+                        <div><p>Status</p></div>
+                        <div><p>{flight.status}</p></div>
                     </div>
 
-                    <div className="table-row-expanded-row">
-                        <div className="table-row-expanded-row-title">
-                            <p>Info</p>
-                        </div>
-                        <div className="table-row-expanded-row-data">
+                    <div className="row">
+                        <div><p>Info</p></div>
+                        <div>
                             {flight.otherInfo || flight.additional
                                 ? <p>{flight.otherInfo}<br />{flight.additional}</p>
                                 : <p>No Update</p>
                             }
                         </div>
                     </div>
+
                 </div>
             </div>
         </main>

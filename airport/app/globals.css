@@ -47,7 +47,7 @@ header {
 
 
 footer {
-  padding-top: 1em;
+  padding: 0.5em;
   border-top: 2px solid white;
   margin-top: auto;
   text-align: center;
@@ -89,9 +89,7 @@ a:hover::before {
   font-size: 2em;
 }
 
-#homepage {
-  background-color: darkblue;
-}
+
 
 
 
