@@ -35,7 +35,6 @@ const FlightList = ({ flights }) => {
     if (!uniqueAirlines) return "Loading..."
 
     return (
-        <main>
             <div className="table-search-container">
                 <div className="table-container">
                     <div className="table">
@@ -55,7 +54,6 @@ const FlightList = ({ flights }) => {
                     </div>
                 </div>
             </div>
-        </main>
     );
 }
 export default FlightList;

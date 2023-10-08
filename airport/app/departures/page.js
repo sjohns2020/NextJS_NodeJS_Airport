@@ -1,6 +1,6 @@
 //app/departures/page.js
 
-import {getDepartures}  from '../components/flightService';
+import { getDepartures } from '../components/flightService';
 import FlightList from '../components/flightList';
 
 export const metadata = {
@@ -15,8 +15,12 @@ const Departures = async () => {
 
     return (
         <main>
-            <h1 className="pageTitle">Departures</h1>
-            <FlightList flights={departures}/>
+            <div className="pageTitle">
+                <h1>Departures</h1>
+                <p>Todays flights departing from Edinburgh Airport</p>
+            </div>
+
+            <FlightList flights={departures} />
         </main>
     );
 }

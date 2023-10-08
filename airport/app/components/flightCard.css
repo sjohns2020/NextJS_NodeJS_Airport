@@ -13,11 +13,6 @@
     align-items: center;
   }
   
-  .time {
-    display: flex;
-    width: 10em;
-    align-items: center;
-  }
   
   .portOfCallA {
     display: flex;
@@ -52,6 +47,12 @@
   }
   
   .more-details {
+    display: flex;
+    width: 10em;
+    align-items: center;
+  }
+
+  .time {
     display: flex;
     width: 10em;
     align-items: center;
