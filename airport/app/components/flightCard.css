@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.width-10em {
+/* .width-10em {
     width: 10em;
 }
 
@@ -14,7 +14,7 @@
 
 .width-20em {
     width: 20em;
-}
+} */
 
 .table-row, .table-column {
     display: flex;

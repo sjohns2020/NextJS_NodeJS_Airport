@@ -2,9 +2,13 @@
 
 import "./filterBar.css";
 import { getFlights } from "./flightService"
+import React, { useState } from 'react';
+
 
 
 const FilterBar = ({ uniqueAirlines, setSearch, setDisplayedFlights }) => {
+
+    const [activeStatus, setActiveStatus] = useState(null);
 
     const handleFlightStatusChange = async (status) => {
         const search = {
@@ -26,8 +30,13 @@ const FilterBar = ({ uniqueAirlines, setSearch, setDisplayedFlights }) => {
             searchTerm = array[0];
         }
         return (
-            <img key={flight.flightNo} src={flight.image} alt={flight.airline} onClick={() => handleAirlineChange({airline: searchTerm})} />        
-        )})
+            <img key={flight.flightNo} src={flight.image} alt={flight.airline} onClick={() => {
+                handleAirlineChange({ airline: searchTerm });
+                setActiveStatus(searchTerm);
+            }} className={searchTerm === activeStatus ? 'active' : ''} />
+
+        )
+    })
 
     return (
         <div className="filter-container">
@@ -42,8 +51,11 @@ const FilterBar = ({ uniqueAirlines, setSearch, setDisplayedFlights }) => {
                     { icon: "fa-solid fa-person-walking-dashed-line-arrow-right", label: "Last Call", value: "LAST" },
                     { icon: "fa-regular fa-hourglass-half", label: "Estimated", value: "ESTIMATED" }
                 ].map(status => (
-                    <div className="status-button" key={status.value}>
-                        <button value={status.value} onClick={() => handleFlightStatusChange(status.value)}>
+                    <div className={status.value === activeStatus ? 'status-button active' : 'status-button'} key={status.value}>
+                        <button value={status.value} onClick={() => {
+                            handleFlightStatusChange(status.value);
+                            setActiveStatus(status.value);
+                        }}>
                             <p className={status.icon}></p>
                             <p>{status.label}</p>
                         </button>

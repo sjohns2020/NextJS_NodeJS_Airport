@@ -1,4 +1,4 @@
-# AirportX_App
+# Edinburgh Airport FlightBoard App (NextJS + NodeJS)
 
 
 
@@ -7,7 +7,7 @@
 
 ### Brief
 
-The client has asked me to build a full stack application using NextJS and Node.js to allow a user to view and filter a list of flight data. Using JSON flight data, create an API using Node.js, Express and MySQL.  Then, build a React App to call the API and display the flights in a table that can be filtered.
+The client has asked me to build a full stack application using NextJS and Node.js to allow a user to view and filter a list of flight data. Using JSON flight data, create an RESTfull API using Node.js, Express and MySQL.  Then, build a NextJS v13 Frontend, learning new features of the latest version to call the API and that allows a user to see, filter, sort and search Arrivals and Departures.
 
 ### MVP
 
@@ -22,16 +22,19 @@ The client has asked me to build a full stack application using NextJS and Node.
 ### Extensions
 
 - The frontend and backend should be designed so that it can be scaled if it were a production service. Consider component hierarchy in the NextJS App and the API routing structure. 
-- The dates are strings in DD/MM/YYYY format. Is there a better solution?
+- Handling date formatting in the server and frontend from the JSON are strings in DD/MM/YYYY format.
 
-### Advanced Extensions
-- Add Authentication
+### Advanced Extensions (Not yet achieved)
+- Deploy this app of Vercel
 - Add rate limiting to improve performance. 
 - Implement Redux to better manage state.
 
 <br><br>
 
 # Learnings
+
+##### NextJS v3 migrations to the app folder
+- Before this project I had been building in NextJS v12 where I wanted to learn the current v13 changes.  Using the NextJS official docs I learned how to migrate to and use the app folder, NextJS Router and static and dynamic rendering and how to handle state where getStaticProps and other NextJS functionality is now not available in in the app folder.
 
 ##### MySQL in Node.js
 - Using MySQL and implementing a relational database into a Node backend. I have used relational databases extensively in Django, Flask and Spring but have only used non-relational databases like MongoDB in a node backend.

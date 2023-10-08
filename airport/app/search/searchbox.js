@@ -26,19 +26,20 @@ const SearchBox = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex w-full max-w-md mx-auto items-center border rounded-lg overflow-hidden mt-4">
             <input
                 id="search"
                 type="text"
-                className="input-field"
                 onChange={handleFlightNoChange}
                 placeholder="Search Flight No..."
                 data-tab="sortFlights"
+                className="flex-grow py-2 px-4 outline-none text-black"
             />
-            <button type="submit" className="submit-button" data-tab="sortFlights">
+            <button type="submit" data-tab="sortFlights" className="bg-blue-500 text-white py-2 px-6 focus:outline-none hover:bg-blue-600 rounded-r-lg">
                 Search
             </button>
         </form>
+
     );
 }
 

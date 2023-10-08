@@ -1,30 +1,16 @@
-.table-container {
+.details-table-container {
     font-size: large;
-    padding: 2em;
-    display: grid;
-    place-items: center;
-    /* margin-bottom: 0.5em; */
+    margin: 2rem auto 0 auto;
+    max-width: 800px;
+    color: black;
 }
 
-.table {
-    border: solid rgba(255, 255, 255, 0.841) 4px;
-    border-bottom: none;
-    display: grid; 
-}
-
-.row {
+.details-table {
     display: grid;
-    grid-template-columns: 10vw 25vw;
-    align-items: center;
-    border-bottom: solid rgba(255, 255, 255, 0.841) 4px;
 }
 
 .row:last-child {
     border-bottom: none;
-}
-
-.airline {
-    display: flex;
 }
 
 .airline img {
@@ -32,21 +18,5 @@
     height: auto;
     display: block;
     margin: 8px;
-}
-
-.row > div {
-    padding: 0.5em;
-}
-
-.row div:first-child > p {
-    margin: 0.5em;
-    font-weight: bolder;
-}
-
-.row div:last-child {
-    border-left: solid rgba(255, 255, 255, 0.841) 4px;
-}
-
-.row div:last-child > p {
-    margin: 0.5em;
+    border: 1px solid grey;
 }

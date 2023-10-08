@@ -23,12 +23,12 @@
   background: rgba(255, 255, 255, 0.887);
   box-shadow: rgba(255, 255, 255, 0.282) 1px 1px 7px 7px;
   border-radius: 1.5em;
+  width: 60vw;
   border-top-left-radius: 0;
   /* display: flex;
   flex-wrap: wrap; */
   justify-content: center;
   border: solid rgb(195, 195, 195) 4px;
-  max-width: 60vw;
 }
 
 .table-row-container:nth-child(odd) {
