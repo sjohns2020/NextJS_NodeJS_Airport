@@ -1,9 +1,9 @@
 .table-container {
     font-size: large;
-    padding: 4em;
+    padding: 2em;
     display: grid;
     place-items: center;
-    margin-bottom: 0.5em;
+    /* margin-bottom: 0.5em; */
 }
 
 .table {
@@ -14,7 +14,7 @@
 
 .row {
     display: grid;
-    grid-template-columns: 15vw 25vw;
+    grid-template-columns: 10vw 25vw;
     align-items: center;
     border-bottom: solid rgba(255, 255, 255, 0.841) 4px;
 }

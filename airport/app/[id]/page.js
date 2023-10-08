@@ -1,8 +1,12 @@
-import { getAllFlightIds, getFlight } from "../components/flightService";
+import BackButton from "../components/backButton";
+import { getFlight } from "../components/flightService";
 import "./flight.css"
 
+
 const Flight = async ({ params }) => {
+
     const flight = await getFlight(params.id)
+
     const [hours, minutes] = flight.time.split(":").slice(0, 2);
     const formattedTime = `${hours}:${minutes}`;
 
@@ -65,6 +69,10 @@ const Flight = async ({ params }) => {
 
                 </div>
             </div>
+            {/* <button type="button" onClick={() => router.push('/dashboard')}>
+                Dashboard
+            </button> */}
+            <BackButton />
         </main>
     );
 }

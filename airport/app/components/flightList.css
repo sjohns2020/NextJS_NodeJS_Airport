@@ -13,12 +13,12 @@
 }
 
 .table-container {
-  /* margin-left: 1em; */
-  margin-bottom: 2em;
+  margin: 10em;
+  margin-top: 5em;
 }
 
 .table {
-  font-size: 1.05em;
+  font-size: 1.1em;
   color: black;
   background: rgba(255, 255, 255, 0.887);
   box-shadow: rgba(255, 255, 255, 0.282) 1px 1px 7px 7px;
@@ -28,6 +28,7 @@
   flex-wrap: wrap; */
   justify-content: center;
   border: solid rgb(195, 195, 195) 4px;
+  max-width: 60vw;
 }
 
 .table-row-container:nth-child(odd) {
@@ -66,7 +67,7 @@
   padding-bottom: 0.4em;
   border-bottom: solid rgb(195, 195, 195) 4px;
   background: white;
-  justify-content:  space-evenly; 
+  justify-content:  space-around; 
 }
 
 .table-column>div {

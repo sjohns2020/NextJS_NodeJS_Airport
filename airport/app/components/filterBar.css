@@ -2,10 +2,14 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    border: solid 4px rgba(255, 255, 255, 0.529);
-    background-color: rgba(103, 90, 251, 0.373);
+    border: solid 4px rgb(255, 255, 255);
+    /* background-color: rgba(103, 90, 251, 0.373); */
+    background-image: url(/./images/skyheader.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     padding: 1em 0 1em 1em ;
-    border-top-right-radius: 1em;
+    border-top-right-radius: 1.5em;
 }
 
 .flight-buttons {
@@ -20,15 +24,15 @@
     flex-direction: row;
     justify-content: center;
     cursor: pointer;
-    border: solid rgba(255, 255, 255, 0.551) 2px;
+    border: solid rgba(255, 255, 255, 0.316) 2px;
     transition: background-color 0.3s;
     border-top-right-radius: 0.4em;
-    background-color: white;
+    background-color:  #3610dc72;
+    color: white;
 }
 
 .status-button:hover {
-    background-color: #3610dc72;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.436);
 }
 
 .airport-images {
@@ -47,8 +51,10 @@
     display: block;
     margin: 3px;
     border-top-right-radius: 0.4em;
-    border: 2px #3510dc00 solid;
+    border: solid rgba(255, 255, 255, 0.316) 2px;
     transition: border 0.3s;
+    background-color: #3610dc72;
+    padding: 4px;
 
 
 
@@ -57,6 +63,6 @@
 
 .airport-images img:hover {
     cursor: pointer;
-    border: 2px #3610dc72 solid;
+    background-color: rgba(255, 255, 255, 0.436);
     
 }

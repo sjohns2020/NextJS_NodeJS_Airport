@@ -1,0 +1,10 @@
+.back-button {
+    /* Example styles for the back button */
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* ... other styles as per your theme */
+}
