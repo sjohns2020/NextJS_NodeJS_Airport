@@ -1,15 +1,22 @@
 'use client'
 
 import "./filterBar.css";
+import { getFlights } from "./flightService"
 
-const FilterBar = ({ uniqueAirlines, setSearch }) => {
 
-    const handleFlightStatusChange = (e) => {
-        let searchStatus = e.target.value;
+const FilterBar = ({ uniqueAirlines, setSearch, setDisplayedFlights }) => {
+
+    const handleFlightStatusChange = async (status) => {
         const search = {
-            status: searchStatus
+            status: status
         };
-        setSearch(search);
+        const flights = await getFlights(search)
+        setDisplayedFlights(flights)
+    }
+
+    const handleAirlineChange = async (airline) => {
+        const flights = await getFlights(airline)
+        setDisplayedFlights(flights)
     }
 
     const airlines = uniqueAirlines.map((flight) => {
@@ -19,9 +26,8 @@ const FilterBar = ({ uniqueAirlines, setSearch }) => {
             searchTerm = array[0];
         }
         return (
-            <img key={flight.flightNo} src={flight.image} alt={flight.airline} onClick={() => { setSearch({ airline: searchTerm }); }} />
-        );
-    })
+            <img key={flight.flightNo} src={flight.image} alt={flight.airline} onClick={() => handleAirlineChange({airline: searchTerm})} />        
+        )})
 
     return (
         <div className="filter-container">
@@ -37,7 +43,7 @@ const FilterBar = ({ uniqueAirlines, setSearch }) => {
                     { icon: "fa-regular fa-hourglass-half", label: "Estimated", value: "ESTIMATED" }
                 ].map(status => (
                     <div className="status-button" key={status.value}>
-                        <button value={status.value} onClick={handleFlightStatusChange}>
+                        <button value={status.value} onClick={() => handleFlightStatusChange(status.value)}>
                             <p className={status.icon}></p>
                             <p>{status.label}</p>
                         </button>

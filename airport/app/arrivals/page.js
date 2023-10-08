@@ -14,7 +14,7 @@ const Arrivals = async () => {
 
     return (
             <main>
-                <h1>I am the Arrivals Page</h1>
+                <h1 className="pageTitle">I am the Arrivals Page</h1>
                 <FlightList flights={arrivals}/>
             </main>
 

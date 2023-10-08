@@ -8,9 +8,9 @@ const Home = async () => {
   const allFlights = await getFlights()
 
   return (
-    <main>
-      <h1>I am the Home Page</h1>
-      <FlightList flights={allFlights}/>
+    <main id="homepage">
+      <h1 className="pageTitle">Welcome to Edinburgh Airport Flight Board </h1>
+      {/* <FlightList flights={allFlights}/> */}
     </main>
   )
 }

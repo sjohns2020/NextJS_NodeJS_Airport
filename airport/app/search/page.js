@@ -15,7 +15,7 @@ const Search = async () => {
 
     return (
         <main>
-            <h1>I am the Search Page</h1>
+            <h1 className="pageTitle">I am the Search Page</h1>
             <SearchBox />
             <FlightList flights={flights}/>
         </main>

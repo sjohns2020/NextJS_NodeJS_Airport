@@ -10,14 +10,10 @@ const FlightList = ({ flights }) => {
 
     // const FlightList = ({ flights, getDepartures, getArrivals, getFlights, sortFlights, searchFlight, setSearchError, tab, setTab, uniqueAirlines }) => {
     // Handles state to conditionally render the expansion of the flight card
-    const [uniqueAirlines, setUniqueAirlines] = useState([]);
+    const [uniqueAirlines, setUniqueAirlines] = useState(getUniqueAirlines(flights));
     const [displayedFlights, setDisplayedFlights] = useState(flights)
     const [search, setSearch] = useState(null)
 
-    useEffect(() => {
-        const airports = getUniqueAirlines(flights)
-        setUniqueAirlines(airports)
-    }, [])
 
     // Handles the column heading being clicked and sorts 
     // the flight data in the FlightContainer
@@ -35,12 +31,14 @@ const FlightList = ({ flights }) => {
         )
     })
 
+    if (!uniqueAirlines) return "Loading..."
+
     return (
         <main>
             <div className="table-search-container">
                 <div className="table-container">
                     <div className="table">           
-                        <FilterBar uniqueAirlines={uniqueAirlines} setSearch={setSearch} />
+                        <FilterBar uniqueAirlines={uniqueAirlines} setDisplayedFlights={setDisplayedFlights} />
 
                         <div className="table-column" key="">
                             <div className="image">

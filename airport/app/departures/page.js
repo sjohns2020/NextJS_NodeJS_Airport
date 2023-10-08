@@ -15,7 +15,7 @@ const Departures = async () => {
 
     return (
         <main>
-            <h1>Departures</h1>
+            <h1 className="pageTitle">Departures</h1>
             <FlightList flights={departures}/>
         </main>
     );
