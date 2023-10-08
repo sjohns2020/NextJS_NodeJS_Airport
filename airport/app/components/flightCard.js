@@ -32,7 +32,7 @@ const FlightCard = ({ flight }) => {
                 <p>{flight.status}</p>
             </div>
             <div className="more-details">
-            <Link href="/">Show More{'\u0020' + '\u2192'}</Link>
+            <Link href={"/" + flight.flightNo}>Show More{'\u0020' + '\u2192'}</Link>
             </div>
         </div>
     );

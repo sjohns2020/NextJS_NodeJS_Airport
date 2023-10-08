@@ -39,12 +39,27 @@ export const getFlights = async(search) => {
 // GET ALL DEPARTURES
 export const getDepartures = async () => {
     const res = await fetch('http://localhost:8080/api/flights/departures');
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
+      }
     return res.json();
 }
 
 // GET ALL ARRIVALS
 export const getArrivals = async () => {
     const res = await fetch('http://localhost:8080/api/flights/arrivals');
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
+      }
+    return res.json();
+}
+
+// GET FLIGHT BY FLIGHTNO
+export const getFlight = async (flightNo) => {
+    const res = await fetch(`http://localhost:8080/api/flights/flight/${flightNo}`);
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
+      }
     return res.json();
 }
 
@@ -111,3 +126,16 @@ export const sortFlights = (flights, sortKey) => {
 
     return sortedFlights;
 };
+
+export async function getAllFlightIds() {
+    const flights = await getFlights()
+    return flights.map((flight) => {
+        // let id = flight.id.toString()
+       
+        return {
+            params: {
+                id: flight.flightNo,
+            },
+        };
+    });
+}

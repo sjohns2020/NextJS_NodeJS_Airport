@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./flightList.css"
 import FilterBar from "./filterBar";
 import FlightCard from "./flightCard";
+import SortButton from "./sortButton";
 import { getUniqueAirlines, sortFlights } from "./flightService"
 
 
@@ -37,24 +38,16 @@ const FlightList = ({ flights }) => {
         <main>
             <div className="table-search-container">
                 <div className="table-container">
-                    <div className="table">           
+                    <div className="table">
                         <FilterBar uniqueAirlines={uniqueAirlines} setDisplayedFlights={setDisplayedFlights} />
 
                         <div className="table-column" key="">
-                            <div className="image">
-                                <button className="button-sort" value="airline" onClick={sortByColumn}>AIRLINE</button>
-                            </div>
-                            <div className="time">
-                                <button className="button-sort" value="time" onClick={sortByColumn}>TIME</button>
-                            </div>
-                            <div className="portOfCallA">
-                                <button className="button-sort" value="portOfCallA" onClick={sortByColumn}>FLIGHT DETAILS</button>
-                            </div>
-                            <div className="status">
-                                <button className="button-sort" value="status" onClick={sortByColumn}>STATUS</button>
-                            </div>
+                            <SortButton column="image" sortByColumn={sortByColumn}>AIRLINE</SortButton>
+                            <SortButton column="time" sortByColumn={sortByColumn}>TIME</SortButton>
+                            <SortButton column="portOfCallA" sortByColumn={sortByColumn}>FLIGHT DETAILS</SortButton>
+                            <SortButton column="status" sortByColumn={sortByColumn}>STATUS</SortButton>
                             <div className="more-details">
-                                <button className="button-sort" >MORE DETAILS</button>
+                                <button className="button-sort">MORE DETAILS</button>
                             </div>
 
                         </div>
