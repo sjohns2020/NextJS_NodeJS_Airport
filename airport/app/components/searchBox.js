@@ -1,28 +1,33 @@
 "use client"
 
+import { getFlight } from "./flightService";
+
 import { useState } from "react";
 
-const SearchBox = () => {
+const SearchBox = ({ handleSearch }) => {
 
-    const searchFlight = (search) => {
-        console.log(search)
-    }
 
     // State for the inputted flight number
-    const [searchFlightNo, setSearchFlightNo] = useState(null)
+    const [flightNo, setFlightNo] = useState(null)
 
     // Sets searchFlightNo state when the input is changed
     const handleFlightNoChange = (e) => {
-        setSearchFlightNo(e.target.value)
+        setFlightNo(e.target.value)
     }
 
     // Handler for the search form to be submitted.  Sends the search term as an object so that it is open to extension for more searches to be added.
     const handleSubmit = (e) => {
         e.preventDefault()
-        const search = {
-            flightNo: searchFlightNo,
+        if (flightNo) {
+            const search = {
+                flightNo: flightNo,
+            }
+            handleSearch(search)
         }
-        searchFlight(search)
+        else {
+            handleSearch()
+        }
+
     }
 
     return (

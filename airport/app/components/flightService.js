@@ -1,12 +1,4 @@
-export const getData = async () => {
-    // const res = await fetch('http://localhost:8080/api/flights', { cache: 'force-cache', next: { revalidate: 3600 } }) 
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
-    }
-    return res.json()
-  }
-
-
+// This file handles all requests for flight data
 
 // GET ALL FLIGHTS
 export const getFlights = async(search) => {
@@ -54,7 +46,7 @@ export const getArrivals = async () => {
     return res.json();
 }
 
-// GET FLIGHT BY FLIGHTNO
+// GET FLIGHT BY FLIGHT NUMBER
 export const getFlight = async (flightNo) => {
     const res = await fetch(`http://localhost:8080/api/flights/flight/${flightNo}`);
     if (!res.ok) {
@@ -64,7 +56,8 @@ export const getFlight = async (flightNo) => {
 }
 
 // SearchFlights handles any search for Flight Number 
-export const searchFlight = async (flights, search) => {
+export const searchFlight = async (search) => {
+    const flights = await getFlights()
     if (search) {
         if (search["flightNo"]) {
             console.log(search["flightNo"]);
@@ -93,18 +86,17 @@ export const searchFlight = async (flights, search) => {
 
 // getUniqueAirlines handles the filters in the FilterBar component. Returns a unique list of airlines.
 export const getUniqueAirlines = (allFlights) => {
-    const uniqueFlightsByAirline = allFlights.reduce((accumulator, flight) => {
-        // Check if the airline already exists in the accumulator
-        const existingAirline = accumulator.find(item => item.airline === flight.airline);
-        // If the airline exists, no need to add a duplicate entry
-        if (existingAirline) {
-            return accumulator;
-        }
-        // If the airline doesn't exist, add it to the accumulator
-        return [...accumulator, flight];
-    }, []);
-    return uniqueFlightsByAirline;
-    // setUniqueAirlines(uniqueFlightsByAirline);
+        const uniqueFlightsByAirline = allFlights.reduce((accumulator, flight) => {
+            // Check if the airline already exists in the accumulator
+            const existingAirline = accumulator.find(item => item.airline === flight.airline);
+            // If the airline exists, no need to add a duplicate entry
+            if (existingAirline) {
+                return accumulator;
+            }
+            // If the airline doesn't exist, add it to the accumulator
+            return [...accumulator, flight];
+        }, []);
+        return uniqueFlightsByAirline;
 }
 
 
@@ -127,15 +119,15 @@ export const sortFlights = (flights, sortKey) => {
     return sortedFlights;
 };
 
-export async function getAllFlightIds() {
-    const flights = await getFlights()
-    return flights.map((flight) => {
-        // let id = flight.id.toString()
+// export async function getAllFlightIds() {
+//     const flights = await getFlights()
+//     return flights.map((flight) => {
+//         // let id = flight.id.toString()
        
-        return {
-            params: {
-                id: flight.flightNo,
-            },
-        };
-    });
-}
+//         return {
+//             params: {
+//                 id: flight.flightNo,
+//             },
+//         };
+//     });
+// }

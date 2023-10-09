@@ -1,7 +1,7 @@
 //app/departures/page.js
 
 import { getDepartures } from '../components/flightService';
-import FlightList from '../components/flightList';
+import FlightContainer from '../components/flightContainer';
 
 export const metadata = {
     title: 'Departures',
@@ -17,10 +17,9 @@ const Departures = async () => {
         <main>
             <div className="pageTitle">
                 <h1>Departures</h1>
-                <p>Todays flights departing from Edinburgh Airport</p>
             </div>
 
-            <FlightList flights={departures} />
+            <FlightContainer flights={departures}/>
         </main>
     );
 }

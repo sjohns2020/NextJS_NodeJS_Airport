@@ -1,22 +1,24 @@
 
-import {getArrivals}  from '../components/flightService';
-import FlightList from '../components/flightList';
+import { getArrivals } from '../components/flightService';
+import FlightContainer from '../components/flightContainer';
 
 
 export const metadata = {
     title: 'Arrivals',
     description: 'NEXTJS Edinburgh Airport App',
-  }
+}
 
 const Arrivals = async () => {
 
     const arrivals = await getArrivals()
 
     return (
-            <main>
-                <h1 className="pageTitle">I am the Arrivals Page</h1>
-                <FlightList flights={arrivals}/>
-            </main>
+        <main>
+            <div className="pageTitle">
+                <h1>Arrivals</h1>
+            </div>
+            <FlightContainer flights={arrivals} />
+        </main>
 
     );
 }

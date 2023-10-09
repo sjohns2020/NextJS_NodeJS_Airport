@@ -7,13 +7,10 @@ import SortButton from "./sortButton";
 import { getUniqueAirlines, sortFlights } from "./flightService"
 
 
-const FlightList = ({ flights }) => {
+const FlightList = ({ flights, setDisplayedFlights, handleSearch }) => {
 
-    // const FlightList = ({ flights, getDepartures, getArrivals, getFlights, sortFlights, searchFlight, setSearchError, tab, setTab, uniqueAirlines }) => {
     // Handles state to conditionally render the expansion of the flight card
     const [uniqueAirlines, setUniqueAirlines] = useState(getUniqueAirlines(flights));
-    const [displayedFlights, setDisplayedFlights] = useState(flights)
-    const [search, setSearch] = useState(null)
 
 
     // Handles the column heading being clicked and sorts 
@@ -24,21 +21,19 @@ const FlightList = ({ flights }) => {
     }
 
     // Handles displaying a FlightCard component for each flight
-    let flightList = displayedFlights.map((flight) => {
-        return (
-            <div className="table-row-container" key={flight.flightNo}>
-                <FlightCard flight={flight} />
-            </div>
-        )
-    })
-
-    if (!uniqueAirlines) return "Loading..."
+        const flightList = flights.map((flight) => {
+            return (
+                <div className="table-row-container" key={flight.flightNo}>
+                    <FlightCard flight={flight} />
+                </div>
+            )
+        })
 
     return (
             <div className="table-search-container">
                 <div className="table-container">
                     <div className="table">
-                        <FilterBar uniqueAirlines={uniqueAirlines} setDisplayedFlights={setDisplayedFlights} />
+                        <FilterBar uniqueAirlines={uniqueAirlines} setDisplayedFlights={setDisplayedFlights} handleSearch={handleSearch} />
 
                         <div className="table-column" key="">
                             <SortButton column="image" sortByColumn={sortByColumn}>AIRLINE</SortButton>
