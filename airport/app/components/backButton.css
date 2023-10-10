@@ -1,4 +1,6 @@
 .back-button {
+    margin-left: 4em;
+    font-size: 3em;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -8,6 +10,8 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 1em;
-    width: 10em;
-}
+    margin-top: 0.5em;
+    /* margin-bottom: 1em; */
+    width: 5em;
+    text-align: center;
+  }

@@ -13,10 +13,10 @@ const Flight = async ({ params }) => {
     return (
         <main>
             {flight.arrDep === "A"
-                ? <div className="pageTitle">
+                ? <div className="home-page-title">
                     <h1>{formattedTime} <span>{flight.airline}</span> flight arriving from {flight.portOfCallA}</h1>
                 </div>
-                : <div className="pageTitle">
+                : <div className="home-page-title">
                     <h1>{formattedTime} {flight.airline} flight to {flight.portOfCallA}</h1>
                 </div>
             }

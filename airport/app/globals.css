@@ -84,10 +84,42 @@ a:hover::before {
   width: 50%; 
   box-shadow: white 1px 1px 1px 1px;
 } 
-.pageTitle {
+.page-title-arrivals {
   margin-left: 4em;
   font-size: 3em;
   color: rgba(255, 255, 255, 0.499);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  width: 6em;
+  text-align: center;
+}
+
+
+.home-page-title {
+  margin-left: 4em;
+  font-size: 3em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  width: 20em;
+  text-align: center;
 }
 
 @media (max-width: 1100px) {
