@@ -55,34 +55,6 @@ export const getFlight = async (flightNo) => {
     return res.json();
 }
 
-// SearchFlights handles any search for Flight Number 
-export const searchFlight = async (search) => {
-    const flights = await getFlights()
-    if (search) {
-        if (search["flightNo"]) {
-            console.log(search["flightNo"]);
-            for (const flight of flights) {
-                if (search["flightNo"] === flight.flightNo) {
-                    const searchTerm = search["flightNo"];
-                    const res = await fetch(`http://localhost:8080/api/flights/flight/${searchTerm}`);
-                    return res.json();
-                }
-                else {
-                    getFlights(search);
-                }
-            }
-        }
-        if (search["airline"]) {
-            getFlights(search);
-        }
-        else {
-            getFlights(search);
-        }
-    }
-    else {
-        getFlights();
-    }
-}
 
 // getUniqueAirlines handles the filters in the FilterBar component. Returns a unique list of airlines.
 export const getUniqueAirlines = (allFlights) => {
@@ -119,6 +91,7 @@ export const sortFlights = (flights, sortKey) => {
     return sortedFlights;
 };
 
+// NEXT v13 -> Dont need to do this anymore
 // export async function getAllFlightIds() {
 //     const flights = await getFlights()
 //     return flights.map((flight) => {

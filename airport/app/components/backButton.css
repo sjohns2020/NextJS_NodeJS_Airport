@@ -1,6 +1,6 @@
 .back-button {
     margin-left: 4em;
-    font-size: 3em;
+    font-size: 1.5em;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -9,9 +9,13 @@
     padding: 15px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 0.5em;
     /* margin-bottom: 1em; */
-    width: 5em;
+    width: 6em;
     text-align: center;
+  }
+
+  .back-button:hover {
+    background-color: rgb(160, 237, 175);
   }
