@@ -2,7 +2,7 @@
 
 
 
-[![PLAY DEMO](./demo.png)](https://www.youtube.com/watch?v=GIcc9Aq3LBw)
+[![PLAY DEMO](./demo.png)](https://youtu.be/GIcc9Aq3LBw)
 
 
 ### Brief

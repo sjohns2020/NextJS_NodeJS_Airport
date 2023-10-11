@@ -5,22 +5,18 @@
 
 body {
   color: white;
-
   /* background: linear-gradient(
     to top,
     #ffa500 , 
     transparent ,
     darkblue 
   ); */
-
   background: rgba(47, 7, 207, 0.867);
-
   min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
-  /* overflow: hidden; */
-  /* position: relative; */
+
 }
 
 main {
@@ -106,7 +102,7 @@ a:hover::before {
 }
 
 
-.home-page-title {
+.home-page-title, .details-page-title {
   margin-left: 4em;
   font-size: 3em;
   display: block;
@@ -120,8 +116,37 @@ a:hover::before {
   border-radius: 5px;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  width: 20em;
+  width: 30em;
   text-align: center;
+}
+
+.details-page-title {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+
+
+.more-details-button {
+  font-size: 1em;
+  margin-right: auto;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  max-width: 8em;
+  max-height: 2em;
+}
+
+.more-details-button a:before {
+  width: 0%;
+  box-shadow: none;
+}
+
+.more-details-button:hover {
+  background-color: rgb(160, 237, 175);
 }
 
 @media (max-width: 1100px) {
