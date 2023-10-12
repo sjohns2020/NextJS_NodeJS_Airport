@@ -1,5 +1,5 @@
 
-import { getArrivals } from '../components/flightService';
+import { getArrivals } from '../utils/flightService';
 import FlightContainer from '../components/flightContainer';
 
 

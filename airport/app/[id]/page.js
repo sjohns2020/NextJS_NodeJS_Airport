@@ -1,5 +1,5 @@
 import BackButton from "../components/backButton";
-import { getFlight } from "../components/flightService";
+import { getFlight } from "../utils/flightService";
 import "./flight.css"
 
 

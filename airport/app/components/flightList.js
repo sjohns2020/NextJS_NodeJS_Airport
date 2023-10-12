@@ -4,7 +4,7 @@ import "./flightList.css"
 import FilterBar from "./filterBar";
 import FlightCard from "./flightCard";
 import SortButton from "./sortButton";
-import { getUniqueAirlines, sortFlights } from "./flightService"
+import { getUniqueAirlines, sortFlights } from "../utils/flightService"
 
 
 const FlightList = ({ flights, setDisplayedFlights, handleSearch }) => {

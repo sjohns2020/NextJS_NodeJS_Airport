@@ -2,7 +2,7 @@
 import SearchBox from "./searchBox";
 import FlightList from "./flightList";
 import { useState } from "react";
-import { getFlight, getFlights } from "./flightService";
+import { getFlight, getFlights } from "../utils/flightService";
 
 
 const FlightContainer = ({flights}) => {

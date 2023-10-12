@@ -1,6 +1,6 @@
 //app/departures/page.js
 
-import { getDepartures } from '../components/flightService';
+import { getDepartures } from '../utils/flightService';
 import FlightContainer from '../components/flightContainer';
 
 export const metadata = {

@@ -1,5 +1,5 @@
 
-import { getFlights } from './components/flightService';
+import { getFlights } from './utils/flightService';
 import FlightList from './components/flightList';
 import SearchBox from './components/searchBox';
 import Image from 'next/image';

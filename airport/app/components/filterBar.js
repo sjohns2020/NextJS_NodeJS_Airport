@@ -1,7 +1,7 @@
 'use client'
 
 import "./filterBar.css";
-import { getFlights } from "./flightService"
+import { getFlights } from "../utils/flightService"
 import React, { useState } from 'react';
 
 

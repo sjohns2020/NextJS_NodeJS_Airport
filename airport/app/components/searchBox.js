@@ -1,6 +1,6 @@
 "use client"
 
-import { getFlight } from "./flightService";
+import { getFlight } from "../utils/flightService";
 
 import { useState } from "react";
 
