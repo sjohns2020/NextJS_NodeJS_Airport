@@ -45,7 +45,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
-    background: rgba(238, 238, 238, 0.32);
+    background-color: #4c74af84;
     padding: 0.3em;
     margin: 0.3em;
     border-radius: 0.5em;
@@ -74,13 +74,11 @@
 .airport-images img:hover, .filter-button:hover,
 .airport-images img.active, .filter-button.active{
     transform: scale(1.05);
-    background: rgba(236, 236, 236, 0.571)
-
-
+    background-color: #283c5dea;
 }
 
 .airport-images img:hover, .filter-button:hover {
     cursor: pointer;
-    background: rgba(236, 236, 236, 0.571)
+    background-color: #283c5dea;
 
 }

@@ -1,20 +1,9 @@
-/* Added for general use */
+
 .center-aligned {
     display: flex;
     align-items: center;
 }
 
-/* .width-10em {
-    width: 10em;
-}
-
-.width-15em {
-    width: 15em;
-}
-
-.width-20em {
-    width: 20em;
-} */
 
 .table-row, .table-column {
     display: flex;
@@ -63,9 +52,6 @@
     width: 15em;
 }
 
-.more-details {
-    display: flex;
-    width: 10em;
-}
+
 
 

@@ -17,6 +17,7 @@ export const getFlights = async(search) => {
         if (search["airline"]) {
             const searchTerm = search["airline"];
             const res = await fetch(`http://localhost:8080/api/flights?airline=${searchTerm}`);
+            console.log(searchTerm)
             return res.json();
         }
     }

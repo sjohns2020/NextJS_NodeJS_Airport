@@ -5,11 +5,12 @@ const Flight = require("../models/flights.model");
 // FIND ALL
 exports.findAll = (req, res) => {
   // This code is to help prevent SQL injection attacks by erroring if illegal characters are used.
-  const alphanumericPattern = /^[A-Za-z0-9]+$/;
+  const alphanumericSpacePattern = /^[A-Za-z0-9 ]+$/;
   for (const key in req.query) {
-    const value = req.query[key];
-    if (!value.match(alphanumericPattern)) {
-      return res.status(400).json({ err: `Invalid input in query parameter "${key}". "${value}" contains illegal characters. Only letters and digits are allowed.` });
+    // Decode the URI component first. This turns %20 back into ' '.
+    const value = decodeURIComponent(req.query[key]);
+    if (!value.match(alphanumericSpacePattern)) {
+      return res.status(400).json({ err: `Invalid input in query parameter "${key}". "${value}" contains illegal characters. Only letters, digits, and spaces are allowed.` });
     }
   }
   // This route also accepts any query parameter so live data can be filetered

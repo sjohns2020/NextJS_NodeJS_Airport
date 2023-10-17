@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
     res.json({ message: "Go to /api/flights to see all Flights." });
 });
 
-// Created a resueable RESTfull router for any table in the database if the database is extended. 
+// Created a reuseable RESTfull router for any table in the database if the database is extended. 
 const createRouter = require("./routes/router.js") 
 const flights = require("./controllers/flight.controller.js");
 const flightsRouter = createRouter(flights);

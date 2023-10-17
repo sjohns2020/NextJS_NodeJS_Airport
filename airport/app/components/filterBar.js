@@ -5,7 +5,6 @@ import { getFlights } from "../utils/flightService"
 import React, { useState } from 'react';
 
 
-
 const FilterBar = ({ uniqueAirlines, setDisplayedFlights, handleSearch }) => {
 
     const [activeStatus, setActiveStatus] = useState(null);
@@ -19,16 +18,19 @@ const FilterBar = ({ uniqueAirlines, setDisplayedFlights, handleSearch }) => {
     }
 
     const handleAirlineChange = async (airline) => {
-        const flights = await getFlights(airline)
-        setDisplayedFlights(flights)
+        // console.log(airline);
+        const flights = await getFlights(airline);
+        setDisplayedFlights(flights);
     }
 
     const airlines = uniqueAirlines.map((flight) => {
         let searchTerm = flight.airline;
-        if (searchTerm.includes(' ')) {
-            const array = searchTerm.split(' ');
-            searchTerm = array[0];
-        }
+
+        // console.log({searchTerm})
+        // if (searchTerm.includes(' ')) {
+        //     const array = searchTerm.split(' ');
+        //     searchTerm = array[0];
+        // }
         return (
             <img key={flight.flightNo} src={flight.image} alt={flight.airline} onClick={() => {
                 handleAirlineChange({ airline: searchTerm });
@@ -64,7 +66,7 @@ const FilterBar = ({ uniqueAirlines, setDisplayedFlights, handleSearch }) => {
                 ))}
             </div>
             <div className="airport-images">
-                <button className="filter-button common-size" onClick={() => { handleSearch() }}>
+                <button className="filter-button reset common-size" onClick={() => { handleSearch() }}>
                     Reset Filters
                 </button>
 
