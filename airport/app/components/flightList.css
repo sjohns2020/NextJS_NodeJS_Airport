@@ -35,12 +35,13 @@
   background-color: #a43db323;
 }
 
-.image, .time, .more-details {
+.image,
+.time,
+.more-details {
   display: flex;
   align-items: center;
-  width: 8em; 
+  width: 8em;
 }
-
 
 .portOfCallA {
   display: flex;
@@ -57,7 +58,6 @@
   width: 8em;
 }
 
-
 .table-column {
   display: flex;
   align-items: center;
@@ -67,20 +67,22 @@
   padding-bottom: 0.4em;
   border-bottom: solid rgb(195, 195, 195) 4px;
   background: white;
-  justify-content:  space-around; 
+  justify-content: space-around;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }
 
-.table-column>div {
+.table-column > div {
   font-weight: bolder;
 }
 
-.table-column>div>h5 {
+.table-column > div > h5 {
   font-weight: bolder;
   padding: 0.5em;
   padding-left: 0;
 }
 
-.table-column>div>h5:hover {
+.table-column > div > h5:hover {
   font-weight: bolder;
   padding: 0.5em;
   margin-left: -0.5em;
@@ -98,28 +100,3 @@
   align-items: center;
   justify-content: center;
 }
-
-@media (max-width: 800px) {
-  .table-column {
-      flex-wrap: wrap;
-  }
-
-  .image, .time, .portOfCallA, .status, .more-details {
-      width: 100%;  /* each column takes the full width on smaller screens */
-      margin-bottom: 0.5em;
-  }
-}
-
-
-
-/* @media (max-width: 1000px) {
-  .table {
-    font-size: 0.8;
-  }
-}
-
-@media (max-width: 600px) {
-  .table {
-    font-size: 0.5;
-  }
-} */

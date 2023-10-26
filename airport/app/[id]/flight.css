@@ -1,22 +1,22 @@
 .details-table-container {
-    font-size: large;
-    margin: 2rem auto 0 auto;
-    max-width: 600px;
-    color: black;
+  font-size: large;
+  margin: 2rem auto 0 auto;
+  max-width: 600px;
+  color: black;
 }
 
 .details-table {
-    display: grid;
+  display: grid;
 }
 
 .row:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .airline img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 8px;
-    border: 1px solid grey;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 8px;
+  border: 1px solid grey;
 }

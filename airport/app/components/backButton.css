@@ -1,6 +1,6 @@
 .back-button {
   font-size: 1.2em;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 5px 10px;
   border: none;
@@ -9,7 +9,7 @@
   width: 8em;
   max-height: 2em;
   transition: all 0.3s;
-  transform: scale(0.90);
+  transform: scale(0.9);
   margin-left: 4em;
   display: block;
   margin-left: auto;
@@ -17,13 +17,10 @@
   cursor: pointer;
   margin-top: 1em;
   text-align: center;
-  }
+}
 
-  .back-button:hover {
-    background-color: #6eaf70;  
-    box-shadow: none;
-    transform: scale(1.05);
-  }
-  
-  
-
+.back-button:hover {
+  background-color: #6eaf70;
+  box-shadow: none;
+  transform: scale(1.05);
+}

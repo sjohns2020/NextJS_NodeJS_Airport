@@ -1,84 +1,92 @@
 .filter-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    border: solid 4px rgb(255, 255, 255);
-    background-image: url(/./images/skyheader.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 1em 0 1em 1em;
-    border-top-right-radius: 1.5em;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: solid 4px rgb(255, 255, 255);
+  background-image: url(/./images/skyheader.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 1em 0 1em 1em;
+  border-top-right-radius: 1.5em;
 }
 
 .flight-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-    width: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  width: 20%;
 }
 
 .status-button {
-    margin-left: 1em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-    font-weight: 600;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-weight: 600;
 }
 
 .airport-images {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-left: 1.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 1.5em;
 }
 
 .common-size {
-    width: 100px;
-    height: 40px;
+  width: 100px;
+  height: 40px;
 }
 
-.filter-button, .airport-images img, .status-button button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s;
-    background-color: #4c74af84;
-    padding: 0.3em;
-    margin: 0.3em;
-    border-radius: 0.5em;
-    color: rgb(255, 255, 255);
-    font-weight: bolder;
-    box-sizing: border-box;
-
+.filter-button,
+.airport-images img,
+.status-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  background-color: #4c74af84;
+  padding: 0.3em;
+  margin: 0.3em;
+  border-radius: 0.5em;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-sizing: border-box;
 }
-.filter-button, .status-button button {
-    font-size: 14px;
-    height: 35px;
+.filter-button,
+.status-button button {
+  font-size: 14px;
+  height: 35px;
 }
 
 .airport-images img {
-    font-size: 20px;
-    border-radius: 0.4em;
-    padding: 0.4em;
+  font-size: 20px;
+  border-radius: 0.4em;
+  padding: 0.4em;
 }
 
-.status-button button:active, .status-button.active button,
-.airport-images img:active, .airport-images img.active, .filter-button.active {
-    transform: scale(0.90);
+.status-button button:active,
+.status-button.active button,
+.airport-images img:active,
+.airport-images img.active,
+.filter-button.active {
+  transform: scale(0.9);
 }
 
-.status-button:hover, .status-button.active,
-.airport-images img:hover, .filter-button:hover,
-.airport-images img.active, .filter-button.active{
-    transform: scale(1.05);
-    background-color: #283c5dea;
+.status-button:hover,
+.status-button.active,
+.airport-images img:hover,
+.filter-button:hover,
+.airport-images img.active,
+.filter-button.active {
+  transform: scale(1.05);
+  background-color: #283c5dea;
 }
 
-.airport-images img:hover, .filter-button:hover {
-    cursor: pointer;
-    background-color: #283c5dea;
-
+.airport-images img:hover,
+.filter-button:hover {
+  cursor: pointer;
+  background-color: #283c5dea;
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha specs",
     "server:dev": "node ./server.js",
-    "seeds": "node ./db/seeds_data.js"
+    "seeds": "node ./db/seeds.js"
   },
   "keywords": [
     "nodejs",
